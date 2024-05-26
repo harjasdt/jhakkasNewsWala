@@ -1,4 +1,4 @@
-##Phase1
+Phase1
 
 ● Data Generation and EDA: Dataset selection and user profile , clickstream data generation .
 ● Implementing content based recommendation for selecting articles to serve certain users.
