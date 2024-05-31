@@ -2,6 +2,7 @@ import pandas as pd
 from django.shortcuts import render
 import os
 import random as random
+import time
 def index(request):
     # Get the absolute path to the CSV file
     csv_file_path = os.path.join(os.path.dirname(__file__), 'conn.csv')
@@ -19,7 +20,12 @@ def index(request):
             ans=[]
             ans.append(x[i])
             ans.append(x[i+1])
-            ans.append(f'https://source.unsplash.com/random/300x200?sig=${random.randint(0, 1000)}')
+            timestamp = int(random.randint(0, 100))
+            print(timestamp)
+
+            # Create the Unsplash URL with the timestamp
+            image_url = f"https://source.unsplash.com/300x200/?newsa&{timestamp}"
+            ans.append(image_url)
             res.append(ans)
             
 
